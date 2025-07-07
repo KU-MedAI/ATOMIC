@@ -92,7 +92,7 @@ class ATOMIC(nn.Module):
             nn.Sigmoid()
         )
 
-        self.evo_embeddings = nn.Embedding.from_pretrained(preinitialized_dnabert_embeddings, freeze=False)
+        self.dnabert_embeddings = nn.Embedding.from_pretrained(preinitialized_dnabert_embeddings, freeze=False)
         self.random_fea_embeddings = nn.Embedding.from_pretrained(preinitialized_random_fea_embeddings, freeze=False)
 
         self.attn_readout = LocationBasedAttentionReadout(output_dim)
@@ -109,13 +109,13 @@ class ATOMIC(nn.Module):
 
     def forward(self, x, edge_index, batch, x_ids):
 
-        evo_embed = self.evo_embeddings(x_ids.squeeze())
+        dnabert_embed = self.dnabert_embeddings(x_ids.squeeze())
         random_fea_embed = self.random_fea_embeddings(x_ids.squeeze())
-        evo_embed = self.lambda_scale_dnabert * evo_embed
+        dnabert_embed = self.lambda_scale_dnabert * dnabert_embed
 
         x = self.lambda_scale_abn * x
         x = x * random_fea_embed
-        x = torch.concat([x, evo_embed], axis = 1)
+        x = torch.concat([x, dnabert_embed], axis = 1)
 
         ## x embedding
         x = self.emb_mlp(x)
