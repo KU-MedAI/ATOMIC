@@ -34,7 +34,7 @@ def eval_crossentropy(args, model, eval_loader, criterion):
         for idx, data in enumerate(eval_loader):
             eval_data = data.cuda()
 
-            outputs,_,_,_,_ = model(eval_data.x, eval_data.edge_index, eval_data.batch, eval_data.x_ids)
+            outputs,_,_,_ = model(eval_data.x, eval_data.edge_index, eval_data.batch, eval_data.x_ids)
             
             loss = criterion(outputs.squeeze(), eval_data.y.float())
 
@@ -84,7 +84,7 @@ def train_crossentropy(args, model, epochs, train_loader, val_loader, test_loade
             data = data.cuda()
             optimizer.zero_grad()
 
-            outputs,_,_,_,_ = model(data.x, data.edge_index, data.batch, data.x_ids)
+            outputs,_,_,_ = model(data.x, data.edge_index, data.batch, data.x_ids)
             
             loss = criterion(outputs.squeeze(), data.y.float())
             loss.backward() # Derive gradients

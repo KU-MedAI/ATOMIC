@@ -123,7 +123,7 @@ class ATOMIC(nn.Module):
         attn_weights = []
         for conv in self.convs:
             if isinstance(conv, GATv2Conv):
-                x, attn_weights = conv(x, dropout_edge(edge_index, p = self.clf_drop_rate, training = self.training)[0], return_attention_weight = True)
+                x, attn_weights = conv(x, dropout_edge(edge_index, p = self.clf_drop_rate, training = self.training)[0], return_attention_weights = True)
             elif isinstance(conv, LayerNorm):
                 x = conv(x, batch)
             else:
