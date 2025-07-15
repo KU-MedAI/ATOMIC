@@ -20,9 +20,17 @@ torch_scatter==2.1.2
 scikit-learn==1.5.2
 ```
 
-The microbial co-expression data used in the paper can be obtained following these [instructions](./datasets/README.md).
-
 ## Usage
+We follow [COAT (Y Cao et al.)](https://github.com/yuanpeicao/COAT) for compute correlation coefficients.
+
+Prepare microbiome data and Construct graph
+```
+python preprocessing/extract_genus_abundance.py
+python preprocessing/graph_construction.py
+```
+<code>extract_genus_abundance.py</code> create genus-level abundance data from <code>datasets/abundance</code>.
+<code>graph_construction.py</code> create graphs with COAT and DNABERT-2 embedding matrix.
+The results are stored in <code>datasets/processed</code>.
 
 Simply run 
 ```
