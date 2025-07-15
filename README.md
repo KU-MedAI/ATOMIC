@@ -1,7 +1,7 @@
 
 <h1 align="center">ATOMIC: A graph attention neural network for ATOpic dermatitis prediction on human gut MICrobiome</h1>
 <p align="center">
-    <a href="https://journals.plos.org/ploscompbiol/"> <img alt="License" src="https://img.shields.io/static/v1?label=Pub&message=ploscompbiol%2725&color=blue"> </a>
+<!--     <a href="https://journals.plos.org/ploscompbiol/"> <img alt="License" src="https://img.shields.io/static/v1?label=Pub&message=ploscompbiol%2725&color=blue"> </a> -->
     <a href="https://github.com/KU-MedAI/ATOMIC"><img src="https://img.shields.io/badge/-Github-grey?logo=github" alt="Github"></a>
 </p>
 
@@ -47,11 +47,5 @@ If you have any question regard our study, please contact us (**mjjeon@korea.ac.
 
 ## Funding
 This study was supported by the MSIT(Ministry of Science and ICT), Korea, under the Technology development Program(S3364091) of MSS, ICAN (ICT Challenge and Advanced Network of HRD) program (IITP-2025-RS2022-00156439) supervised by the IITP (Institute of Information & Communications Technology Planning & Evaluation) and Bio&Medical Technology Development Program of the National Research Foundation (NRF) funded by the Korean government (MSIT) (No. RS-2024-00441029).
-
-If you find our paper and repo useful, please cite our paper: -->
-
-```bibtex -->
-temp
-```
 
 Ack: The readme is inspired by [CIGA](https://github.com/LFhase/CIGA).
